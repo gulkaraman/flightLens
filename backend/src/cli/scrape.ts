@@ -9,7 +9,7 @@ import type { SearchMeta } from '../fallback/getResults';
 interface ScrapeOutput {
   runAtISO: string;
   params: SearchParams;
-  meta: Pick<SearchMeta, 'source' | 'warnings' | 'noResults' | 'directOnlyRequested'>;
+  meta: SearchMeta;
   results: FlightResult[];
 }
 
@@ -24,17 +24,12 @@ async function main(): Promise<void> {
     console.log('Starting scrape CLI with params:', params);
   }
 
-  const { meta, results } = await getResultsWithFallback(params, 'auto');
+  const { meta, results } = await getResultsWithFallback(params);
 
   const payload: ScrapeOutput = {
     runAtISO: meta.runAtISO,
     params,
-    meta: {
-      source: meta.source,
-      warnings: meta.warnings,
-      noResults: meta.noResults,
-      directOnlyRequested: meta.directOnlyRequested
-    },
+    meta,
     results
   };
 
@@ -54,6 +49,11 @@ async function main(): Promise<void> {
       finalPath
     )}`
   );
+
+  if (meta.warnings && meta.warnings.length > 0) {
+    // eslint-disable-next-line no-console
+    console.warn('[scrape-cli] warnings:', meta.warnings.join(', '));
+  }
 }
 
 // eslint-disable-next-line @typescript-eslint/no-floating-promises
@@ -71,10 +71,12 @@ main().catch((error) => {
       dataDir,
       `latest.${process.pid}.${Date.now()}.tmp.json`
     );
+    const nowISO = new Date().toISOString();
     const payload: ScrapeOutput = {
-      runAtISO: new Date().toISOString(),
+      runAtISO: nowISO,
       params,
       meta: {
+        runAtISO: nowISO,
         source: 'mock',
         warnings: ['CLI_UNEXPECTED_ERROR_FALLBACK'],
         noResults: true,

@@ -39,7 +39,7 @@ export const SearchParamsSchema = z
         ctx.addIssue({
           code: z.ZodIssueCode.custom,
           path: ['returnDate'],
-          message: 'returnDate cannot be before departDate'
+          message: 'returnDate must be >= departDate'
         });
       }
     }
