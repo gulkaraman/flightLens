@@ -248,7 +248,6 @@ Bu proje **eğitim / demo amacıyla** geliştirilmiştir:
 
 ---
 
-### Staj Sorumlusuna 2–3 Dakikalık Demo Akışı
 
 Kısa demo için aşağıdaki akış kullanılabilir:
 
