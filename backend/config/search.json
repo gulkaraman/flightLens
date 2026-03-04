@@ -9,6 +9,6 @@
     "adults": 1,
     "children": 0
   },
-  "directOnly": true
+  "directOnly": false
 }
 
