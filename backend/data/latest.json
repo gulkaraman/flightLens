@@ -1,0 +1,127 @@
+{
+  "runAtISO": "2026-03-04T06:43:31.287Z",
+  "params": {
+    "tripType": "roundTrip",
+    "from": "izmir",
+    "to": "istanbul",
+    "departDate": "2026-03-18",
+    "returnDate": "2026-03-04",
+    "passengers": {
+      "adults": 2,
+      "children": 1
+    },
+    "directOnly": false
+  },
+  "results": [
+    {
+      "airline": "AJet",
+      "departTime": "05:25",
+      "arriveTime": "06:40",
+      "priceText": "837,15 TL",
+      "directOnly": false,
+      "isDirect": true,
+      "stopsCount": 0,
+      "stopLabel": "Direkt",
+      "leg": "outbound"
+    },
+    {
+      "airline": "Pegasus",
+      "departTime": "05:45",
+      "arriveTime": "06:50",
+      "priceText": "918,79 TL",
+      "directOnly": false,
+      "isDirect": true,
+      "stopsCount": 0,
+      "stopLabel": "Direkt",
+      "leg": "outbound"
+    },
+    {
+      "airline": "AJet",
+      "departTime": "01:05",
+      "arriveTime": "02:20",
+      "priceText": "1.060,49 TL",
+      "directOnly": false,
+      "isDirect": true,
+      "stopsCount": 0,
+      "stopLabel": "Direkt",
+      "leg": "outbound"
+    },
+    {
+      "airline": "Pegasus",
+      "departTime": "07:10",
+      "arriveTime": "08:15",
+      "priceText": "1.233,36 TL",
+      "directOnly": false,
+      "isDirect": true,
+      "stopsCount": 0,
+      "stopLabel": "Direkt",
+      "leg": "outbound"
+    },
+    {
+      "airline": "Pegasus",
+      "departTime": "12:50",
+      "arriveTime": "13:55",
+      "priceText": "1.542,15 TL",
+      "directOnly": false,
+      "isDirect": true,
+      "stopsCount": 0,
+      "stopLabel": "Direkt",
+      "leg": "outbound"
+    },
+    {
+      "airline": "AJet",
+      "departTime": "05:25",
+      "arriveTime": "06:40",
+      "priceText": "837,15 TL",
+      "directOnly": false,
+      "isDirect": true,
+      "stopsCount": 0,
+      "stopLabel": "Direkt",
+      "leg": "return"
+    },
+    {
+      "airline": "Pegasus",
+      "departTime": "05:45",
+      "arriveTime": "06:50",
+      "priceText": "918,79 TL",
+      "directOnly": false,
+      "isDirect": true,
+      "stopsCount": 0,
+      "stopLabel": "Direkt",
+      "leg": "return"
+    },
+    {
+      "airline": "AJet",
+      "departTime": "01:05",
+      "arriveTime": "02:20",
+      "priceText": "1.060,49 TL",
+      "directOnly": false,
+      "isDirect": true,
+      "stopsCount": 0,
+      "stopLabel": "Direkt",
+      "leg": "return"
+    },
+    {
+      "airline": "Pegasus",
+      "departTime": "07:10",
+      "arriveTime": "08:15",
+      "priceText": "1.233,36 TL",
+      "directOnly": false,
+      "isDirect": true,
+      "stopsCount": 0,
+      "stopLabel": "Direkt",
+      "leg": "return"
+    },
+    {
+      "airline": "Pegasus",
+      "departTime": "12:50",
+      "arriveTime": "13:55",
+      "priceText": "1.542,15 TL",
+      "directOnly": false,
+      "isDirect": true,
+      "stopsCount": 0,
+      "stopLabel": "Direkt",
+      "leg": "return"
+    }
+  ]
+}

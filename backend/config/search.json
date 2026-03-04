@@ -1,0 +1,14 @@
+{
+  "//": "Bu örnek config backend içindeki Zod şeması ile doğrulanır. Alanları değiştirirseniz README'deki config açıklamasını da güncelleyin.",
+  "tripType": "roundTrip",
+  "from": "IST",
+  "to": "SAW",
+  "departDate": "2026-03-01",
+  "returnDate": "2026-03-10",
+  "passengers": {
+    "adults": 1,
+    "children": 0
+  },
+  "directOnly": true
+}
+

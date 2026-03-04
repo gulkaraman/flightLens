@@ -1,0 +1,65 @@
+.flight-loading-overlay {
+  backdrop-filter: blur(18px);
+}
+
+.flight-orbit-circle {
+  stroke-dasharray: 220;
+  stroke-dashoffset: 0;
+  animation: flight-orbit-trail 2.2s linear infinite;
+  transform-origin: center;
+}
+
+.flight-orbit-plane {
+  transform-origin: center;
+  animation: flight-orbit-plane 1.8s linear infinite;
+}
+
+.flight-spinner {
+  border-radius: 9999px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(15, 23, 42, 0.1);
+  border-top-color: rgba(16, 185, 129, 1);
+  animation: flight-spinner-spin 0.8s linear infinite;
+}
+
+@keyframes flight-orbit-trail {
+  0% {
+    stroke-dashoffset: 220;
+    opacity: 0.4;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.4;
+  }
+}
+
+@keyframes flight-orbit-plane {
+  0% {
+    transform: rotate(0deg) translateY(-34px) rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg) translateY(-34px) rotate(-180deg);
+  }
+  100% {
+    transform: rotate(360deg) translateY(-34px) rotate(-360deg);
+  }
+}
+
+@keyframes flight-spinner-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flight-orbit-circle,
+  .flight-orbit-plane,
+  .flight-spinner {
+    animation: none !important;
+  }
+}
+

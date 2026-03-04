@@ -1,0 +1,49 @@
+:root {
+  /* Semantic colors */
+  --fl-color-primary: #16a34a; /* yeşil aksiyon */
+  --fl-color-primary-foreground: #ffffff;
+
+  --fl-color-accent: #ef4444; /* kırmızı header bandı */
+  --fl-color-accent-foreground: #ffffff;
+
+  --fl-color-surface: #ffffff; /* beyaz kart */
+  --fl-color-surface-muted: #f3f4f6;
+
+  --fl-color-muted: #e5e7eb; /* gri toolbar / arkaplan */
+  --fl-color-muted-foreground: #4b5563;
+
+  --fl-color-border: #e5e7eb; /* açık gri border */
+  --fl-color-border-subtle: #e5e7eb;
+
+  --fl-color-text: #0f172a;
+  --fl-color-text-subtle: #6b7280;
+
+  /* Radii & shadows */
+  --fl-radius-card: 18px;
+  --fl-radius-pill: 999px;
+
+  --fl-shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.07);
+  --fl-shadow-strong: 0 18px 45px rgba(15, 23, 42, 0.16);
+}
+
+body {
+  background-color: #f3f4f6;
+  color: var(--fl-color-text);
+}
+
+.fl-surface {
+  background-color: var(--fl-color-surface);
+  border-radius: var(--fl-radius-card);
+  box-shadow: var(--fl-shadow-soft);
+}
+
+.fl-toolbar {
+  background-color: var(--fl-color-muted);
+  color: var(--fl-color-muted-foreground);
+}
+
+.fl-primary-btn {
+  background-color: var(--fl-color-primary);
+  color: var(--fl-color-primary-foreground);
+}
+
