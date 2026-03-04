@@ -272,5 +272,19 @@ Kısa demo için aşağıdaki akış kullanılabilir:
 4. **CI ve zamanlanmış scraper’dan bahset**
    - `ci.yml`: push/PR’da backend lint+build, frontend build.
    - `scraper.yml`: günde 1 kez (`cron`), scraping çalışıyor, `latest.json` değişmişse otomatik commit/push ediyor.
+   
+---
 
+## Screenshots
 
+### Home Page
+
+![Home Page](docs/images/home.png)
+
+### Flight Results
+
+![Flight Results](docs/images/results.png)
+
+### Flight Selection
+
+![Flight Selection](docs/images/selection.png)
