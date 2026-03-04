@@ -2,12 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import type { Page } from 'puppeteer';
 import type { SearchParams } from '../types';
-import {
-  byTextContains,
-  safeWaitVisible,
-  typeAndSelectFromDropdown,
-  waitAndClick
-} from './domHelpers';
+import { safeWaitVisible, typeAndSelectFromDropdown } from './domHelpers';
 import {
   adultCountCandidates,
   adultPlusCandidates,

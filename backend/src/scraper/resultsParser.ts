@@ -21,20 +21,6 @@ export class NoResultsError extends Error {
   code = 'NO_RESULTS';
 }
 
-// Not: bazı Puppeteer sürümlerinde Page.waitForTimeout tipi mevcut olmayabilir.
-// Bu yardımcı, applyDirectFilterAndParse içinde kullanılan basit bir bekleme
-// mekanizmasını sağlar. Ayrıntılı fiyat-bekleme mantığı aşağıdaki
-// parseFlightsFromHtml içindeki lokal waitForPriceOnFirstCard fonksiyonunda da bulunur.
-async function waitForPriceOnFirstCard(page: Page): Promise<void> {
-  const timeoutMs = Number(process.env.PRICE_WAIT_TIMEOUT_MS ?? '0');
-  if (timeoutMs <= 0) return;
-  try {
-    await (page as any).waitForTimeout(timeoutMs);
-  } catch {
-    // noop
-  }
-}
-
 async function isDirectFilterActive(page: Page): Promise<boolean> {
   for (const candidate of directFilterCandidates) {
     try {
@@ -716,9 +702,6 @@ export async function applyDirectFilterAndParse(
       }
     }
   }
-
-  // Snapshot almadan önce, ilk flight kartının içinde ₺/TL/TRY pattern'inin gerçekten DOM'a basılmasını bekle.
-  await waitForPriceOnFirstCard(page);
 
   const html = await page.content();
   const results = parseFlightsFromHtml(html, directOnly);

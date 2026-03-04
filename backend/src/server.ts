@@ -4,11 +4,10 @@ import path from 'path';
 import express, { type Request, type Response, type NextFunction } from 'express';
 import cors from 'cors';
 import { SearchParamsSchema } from './config/schema';
-import type { SearchParams } from './types';
 import type { FlightResult } from './scraper/types';
 import { readLatestFromCache, writeLatestToCache, type CachePayload } from './fallback/cache';
 import { getResultsWithFallback, type SearchMeta } from './fallback/getResults';
-import { searchObiletFlights, type FlightSearchQuery } from './obiletScraper';
+import type { FlightSearchQuery } from './obiletScraper';
 import {
   getFlights,
   getCacheSnapshot,
@@ -134,13 +133,11 @@ async function handleSearch(req: Request, res: Response): Promise<Response> {
 }
 
 app.post('/api/search', (req: Request, res: Response) => {
-  // eslint-disable-next-line @typescript-eslint/no-floating-promises
-  handleSearch(req, res);
+  void handleSearch(req, res);
 });
 
 app.post('/api/search/run', (req: Request, res: Response) => {
-  // eslint-disable-next-line @typescript-eslint/no-floating-promises
-  handleSearch(req, res);
+  void handleSearch(req, res);
 });
 
 app.post('/api/capture', async (req: Request, res: Response) => {
