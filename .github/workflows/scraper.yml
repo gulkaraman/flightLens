@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   run-scraper:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     env:
       SCRAPE_MODE: auto
     defaults:
@@ -33,7 +33,7 @@ jobs:
       - name: Install system dependencies for Puppeteer
         run: |
           sudo apt-get update
-          sudo apt-get install -y \
+          sudo apt-get install -y --no-install-recommends \
             ca-certificates \
             fonts-liberation \
             libasound2 \
